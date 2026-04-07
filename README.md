@@ -1,2 +1,1 @@
-# 05-desarrollo-avanzado-en-javascript
-Modulo 5
+# logica-y-algoritmos-02
