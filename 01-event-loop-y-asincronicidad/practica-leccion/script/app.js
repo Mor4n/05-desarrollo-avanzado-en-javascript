@@ -11,8 +11,11 @@ btnAgregarPedido.addEventListener("click",()=>{
         estado: "espera",
         fecha: Date.now(),
     }
+    console.log(pedido);
+    
 
 });
+
 
 
 
@@ -29,6 +32,19 @@ const prepararPedido = () =>{
 }
 
 const generarID = () =>{
-
-
+    const generarRandom = () =>{
+        const numeroRandom = Math.ceil(
+            new Date().valueOf() * 
+            (Math.random() +0.01) *
+            (Math.random() +0.01) * 1234
+        );
+        return numeroRandom.toString(16)
+    }
+    let id = 
+        generarRandom().slice(-8)+
+        "-" +
+        generarRandom().slice(-4)+
+        "-" +
+        generarRandom().slice(-12);
+    return id;
 }
