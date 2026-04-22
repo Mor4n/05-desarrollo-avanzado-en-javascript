@@ -50,3 +50,6 @@ Se desplegó en Github Pages a partir de este repositorio, puedes ver la página
 
 ## Fuentes:
 
+[Generar numeros random especificos](https://stackoverflow.com/questions/4959975/generate-random-number-between-two-numbers-in-javascript)
+
+[Generar UUID aleatorio](https://www.youtube.com/watch?v=jRuLyWeaUxk)

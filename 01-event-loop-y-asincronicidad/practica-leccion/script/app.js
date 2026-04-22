@@ -8,27 +8,44 @@ btnAgregarPedido.addEventListener("click",()=>{
     // Generar pedido aleatorio
     const pedido = {
         id:generarID(),
-        estado: "espera",
+        estado: "Creado",
         fecha: Date.now(),
     }
-    console.log(pedido);
+     console.log(pedido);
     
+    recepcionPedido(pedido);
 
 });
 
 
 
 
-const recepcionPedido = () =>{
+const recepcionPedido = (pedido) =>{
 
+    const tiempo = tiempoAleatorio(1,3) * 1000;// 1000 para que sea de ms a seg
+
+    setTimeout( () => {
+        pedido.estado = "En proceso"
+        
+        console.log(pedido);
+    }, tiempo );
+    
 }
+
 
 const mostrarHTML = () =>{
 
 }
 
-const prepararPedido = () =>{
+const completarPedido = () =>{
 
+}
+
+
+
+const tiempoAleatorio = (minimo, maximo) =>{
+    
+    return Math.floor(Math.random() * (maximo-minimo+1)+minimo);
 }
 
 const generarID = () =>{
