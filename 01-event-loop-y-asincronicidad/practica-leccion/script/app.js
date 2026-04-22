@@ -9,10 +9,12 @@ btnAgregarPedido.addEventListener("click",()=>{
     const pedido = {
         id:generarID(),
         estado: "Creado",
-        fecha: Date.now(),
+        fecha: new Date().toLocaleString("es-MX"),
     }
-     console.log(pedido);
+    //  console.log(pedido);
     
+    mostrarHTML(pedido);
+
     recepcionPedido(pedido);
 
 });
@@ -22,25 +24,49 @@ btnAgregarPedido.addEventListener("click",()=>{
 
 const recepcionPedido = (pedido) =>{
 
-    const tiempo = tiempoAleatorio(1,3) * 1000;// 1000 para que sea de ms a seg
+    const tiempoProceso = tiempoAleatorio(1,3) * 1000;// 1000 para que sea de ms a seg, va a durar entre 1 a 3 seg
 
-    setTimeout( () => {
-        pedido.estado = "En proceso"
-        
-        console.log(pedido);
-    }, tiempo );
+    const tiempoCompletado = tiempoAleatorio(2,3) * 1000;
+
+
+    actualizarEstado(pedido, "En proceso", tiempoProceso);
     
-}
-
-
-const mostrarHTML = () =>{
+    actualizarEstado(pedido, "Completado", tiempoProceso+tiempoCompletado);
 
 }
 
-const completarPedido = () =>{
 
+const actualizarEstado = (pedido, estado, tiempo) =>{
+    setTimeout( () => {
+        pedido.estado = estado;
+        
+        actualizarHTML(pedido, estado);
+        // console.log(pedido);
+    }, tiempo );
 }
 
+
+
+const mostrarHTML = (pedido) =>{
+    const {id, estado, fecha} = pedido;
+
+    const elementoPedido = document.createElement("LI");
+
+    elementoPedido.id = id;
+    elementoPedido.innerText = `ID: ${id}, estado: ${estado}, fecha: ${fecha}`
+
+    lista_pedidos.appendChild(elementoPedido);
+}
+
+const actualizarHTML = (pedido,estado) =>{
+
+    const pedidoId = document.getElementById(`${pedido.id}`);
+
+    if (pedidoId) {
+        pedidoId.textContent = `ID: ${pedido.id}, estado: ${estado}, fecha: ${pedido.fecha}`;
+    }
+
+}
 
 
 const tiempoAleatorio = (minimo, maximo) =>{
