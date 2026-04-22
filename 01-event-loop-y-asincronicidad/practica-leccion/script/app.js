@@ -11,7 +11,6 @@ btnAgregarPedido.addEventListener("click",()=>{
         estado: "Creado",
         fecha: new Date().toLocaleString("es-MX"),
     }
-    //  console.log(pedido);
     
     mostrarHTML(pedido);
 
@@ -22,28 +21,34 @@ btnAgregarPedido.addEventListener("click",()=>{
 
 
 
-const recepcionPedido = (pedido) =>{
-
-    const tiempoProceso = tiempoAleatorio(1,3) * 1000;// 1000 para que sea de ms a seg, va a durar entre 1 a 3 seg
-
-    const tiempoCompletado = tiempoAleatorio(2,3) * 1000;
+const recepcionPedido = async (pedido) =>{
 
 
-    actualizarEstado(pedido, "En proceso", tiempoProceso);
-    
-    actualizarEstado(pedido, "Completado", tiempoProceso+tiempoCompletado);
+    const tiempoProceso = tiempoAleatorio(1,3) * 1000;
+    const tiempoCompletado = tiempoAleatorio(2,5) * 1000;
+
+    await actualizarEstado(pedido, "En proceso", tiempoProceso);
+    await actualizarEstado(pedido, "Completado", tiempoCompletado);
 
 }
 
+const actualizarEstado = (pedido, nuevoEstado, tiempo) => {
 
-const actualizarEstado = (pedido, estado, tiempo) =>{
-    setTimeout( () => {
-        pedido.estado = estado;
-        
-        actualizarHTML(pedido, estado);
-        // console.log(pedido);
-    }, tiempo );
-}
+    return new Promise((resolve) => {
+
+        setTimeout(() => {
+
+            pedido.estado = nuevoEstado;
+
+            actualizarHTML(pedido);
+
+            resolve();
+            
+        }, tiempo);
+
+    });
+
+};
 
 
 
@@ -58,12 +63,14 @@ const mostrarHTML = (pedido) =>{
     lista_pedidos.appendChild(elementoPedido);
 }
 
-const actualizarHTML = (pedido,estado) =>{
+const actualizarHTML = (pedido) =>{
+    const {id, estado, fecha} = pedido;
+
 
     const pedidoId = document.getElementById(`${pedido.id}`);
 
     if (pedidoId) {
-        pedidoId.textContent = `ID: ${pedido.id}, estado: ${estado}, fecha: ${pedido.fecha}`;
+        pedidoId.textContent = `ID: ${id}, estado: ${estado}, fecha: ${fecha}`;
     }
 
 }
