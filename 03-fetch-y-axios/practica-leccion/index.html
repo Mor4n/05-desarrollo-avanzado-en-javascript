@@ -5,9 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.15.2/dist/axios.min.js"></script>
 </head>
 <body>
+
+    <form id="formulario">
+        <label for="input_nombre">Ingrese el nombre de la canción o artista</label>
+        <input type="text" name="input_nombre" id="input_nombre">
+
+        <button id="fetch-btn">Obtener con Fetch</button>
+        <button id="axios-btn">Obtener con Axios</button>
+
+    </form>
     
-    <script src=""></script>
+    
+    <script src="./script/app.js"></script>
 </body>
 </html>
