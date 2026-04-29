@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- action es para backend, como php -->
+    <form id="formulario_producto">
+
+        ID: <input type="text" name="Id"> <br>
+        Producto <input type="text" name="Producto" id=""><br>
+        Precio <input type="text" name="Precio"> <br>
+        Cantidad <input type="text" name=""Cantidad> <br>
+
+        <input type="submit" value="submit">
+
+    </form>
+
+
+    <h3>Distintos tipos de input</h3>
+    <form >
+        Texto: <input type="text" name="texto"> <br>
+        Contraseña: <input type="password" name="contraseña"> <br>
+        Correo: <input type="email" name="correo"> <br>
+        Número: <input type="number" name="numero"> <br>
+        Fecha: <input type="date" name="fecha"> <br>
+        Color: <input type="color" name="color"> <br>
+        Area de texto <textarea name="area_texto" id="" cols="30" rows="10"></textarea> <br>
+        Checkbox: 1<input type="checkbox" name="checkbox"> <br>
+        Checkbox: 2<input type="checkbox" name="checkbox"> <br>
+        Radio: 1<input type="radio" name="radio"> <br>
+        Radio: 2<input type="radio" name="radio"> <br>
+
+    </form>
+
+    <h3>Validacion</h3>
+    <form id="validacion_formulario">
+        Nombre: <input type="text" name="nombre" > <br>
+        Telefono: <input type="text" name="telefono"> <br>
+        Correo: <input type="email" name="correo"> <br>
+        <input type="submit" value="Submit">
+    </form>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.15.2/dist/axios.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

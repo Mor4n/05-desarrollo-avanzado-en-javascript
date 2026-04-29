@@ -1,5 +1,5 @@
 
-const api_url = "https://sheetdb.io/api/v1/r44jujrkku6o2"
+const api_url = ""
 
 const producto = {
     "ID":"3",
