@@ -10,10 +10,11 @@ let biblioteca = {
 
 const api_url = ""
 
+
 // Función para la lectura de datos
 function leerDatos(callback) {
 
-    if(api_url!=""){
+    if(api_url!==""){
         fetch(api_url)
         .then(res => res.json())
         .then(data => {
