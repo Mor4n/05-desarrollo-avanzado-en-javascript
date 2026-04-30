@@ -11,7 +11,18 @@ let imagen_reproductor = document.querySelector("#imagen-reproductor");
 let data_container = document.querySelector(".data-container")
 
 
-function obtenerDatos(valor) {
+ function  axiosObtenerDatos (valor) {
+    let api =`https://itunes.apple.com/search?term=${encodeURIComponent(valor)}&media=music&entity=song&limit=3`;
+    
+
+     axios.get(api)
+    .then( respuesta => recorrerRespuesta(respuesta.data.results))
+
+
+}
+
+
+function fetchObtenerDatos(valor) {
     //? Con encodeURIComponent hago que si escribo "Instant crush - Daft punk" se ponga algo como "Instant%20Crush%20 - %20Daft%20Punk"
     
     let api =`https://itunes.apple.com/search?term=${encodeURIComponent(valor)}&media=music&entity=song&limit=3`;
@@ -26,10 +37,9 @@ function obtenerDatos(valor) {
 
     }
     )
-    
-
 
 }
+
 
 
 function recorrerRespuesta(respuesta){
@@ -88,9 +98,15 @@ function mostrarHTML(objeto) {
 
 
 
-formulario.addEventListener("submit",(e)=>{
-    e.preventDefault();
-    
-    obtenerDatos(input_nombre.value);
+btn_fetch.addEventListener("click",()=>{
 
+    fetchObtenerDatos(input_nombre.value);
 })
+
+
+
+btn_axios.addEventListener("click",(e)=>{
+    e.preventDefault();
+    axiosObtenerDatos(input_nombre.value);
+})
+
