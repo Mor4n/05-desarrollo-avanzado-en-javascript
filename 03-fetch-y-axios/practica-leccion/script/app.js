@@ -6,12 +6,15 @@ let btn_axios = document.querySelector("#axios-btn")
 let formulario = document.querySelector("#formulario")
 
 let reproductor = document.querySelector("#reproductor");
+let imagen_reproductor = document.querySelector("#imagen-reproductor");
+
+let data_container = document.querySelector(".data-container")
 
 
 function obtenerDatos(valor) {
     //? Con encodeURIComponent hago que si escribo "Instant crush - Daft punk" se ponga algo como "Instant%20Crush%20 - %20Daft%20Punk"
     
-    let api =`https://itunes.apple.com/search?term=${encodeURIComponent(valor)}&media=music&entity=song&limit=1`;
+    let api =`https://itunes.apple.com/search?term=${encodeURIComponent(valor)}&media=music&entity=song&limit=3`;
     
     fetch(api)
     .then((respuesta) => respuesta.json())
@@ -19,7 +22,7 @@ function obtenerDatos(valor) {
 
         // console.log(datos.results); arreglo que en el indice 0 va a mandar un objeto
         
-        mostrarHTML(datos.results);
+        recorrerRespuesta(datos.results);
 
     }
     )
@@ -29,14 +32,44 @@ function obtenerDatos(valor) {
 }
 
 
+function recorrerRespuesta(respuesta){
+    console.log(respuesta);
+    
+    data_container.innerHTML = ``; // reset de lo que esté dentro del contenedor
+
+    respuesta.forEach(elemento => {
+        mostrarHTML(elemento);
+    });
+
+}
+
 
 function mostrarHTML(objeto) {
     console.log(objeto);
+
+    const { artistName, collectionName, trackName, previewUrl, artworkUrl100, releaseDate } = objeto;
+
     
-    const { artistName, collectionName, trackName, previewUrl, artworkUrl100, releaseDate } = objeto[0];
-    console.log(`${artistName},${ collectionName}, trackName, ${previewUrl}, artworkUrl100, releaseDate`);
-    
-    reproductor.src = previewUrl;
+
+    const reproductor_HTML = `
+        <video-player>
+        <video-minimal-skin>
+
+        <media-poster>
+            <img src="${artworkUrl100}" id="imagen-reproductor"/>
+        </media-poster>
+
+            <video src="${previewUrl}" playsinline id="reproductor"></video>
+        </video-minimal-skin>
+        </video-player>
+        
+    `;
+
+
+
+    data_container.innerHTML +=reproductor_HTML; // añado los datos
+
+
 
 
 }
