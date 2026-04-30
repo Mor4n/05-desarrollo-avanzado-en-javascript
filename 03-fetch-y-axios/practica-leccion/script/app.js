@@ -52,16 +52,28 @@ function mostrarHTML(objeto) {
     
 
     const reproductor_HTML = `
-        <video-player>
-        <video-minimal-skin>
+        
+        <div class="info-obtenida" id="contenedor-reproductor">
+            <video-player>
+            <video-minimal-skin>
 
-        <media-poster>
-            <img src="${artworkUrl100}" id="imagen-reproductor"/>
-        </media-poster>
+            <media-poster>
+                <img src="${artworkUrl100}" id="imagen-reproductor"/>
+            </media-poster>
 
-            <video src="${previewUrl}" playsinline id="reproductor"></video>
-        </video-minimal-skin>
-        </video-player>
+                <video src="${previewUrl}" playsinline id="reproductor"></video>
+            </video-minimal-skin>
+            </video-player>
+        </div>
+
+        <div class="" id="contenedor-info">
+            <h2>Canción: <span>${trackName}</span></h2>
+            <h2>Artista: <span>${artistName}</span></h2>
+            <h2>Álbum: <span>${collectionName}</span></h2>
+            <h2>Fecha de lanzamiento: <span>${releaseDate}</span></h2>
+
+        </div>
+
         
     `;
 
