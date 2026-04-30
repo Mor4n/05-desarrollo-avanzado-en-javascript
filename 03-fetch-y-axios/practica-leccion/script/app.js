@@ -98,8 +98,8 @@ function mostrarHTML(objeto) {
 
 
 
-btn_fetch.addEventListener("click",()=>{
-
+btn_fetch.addEventListener("click",(e)=>{
+    e.preventDefault();
     fetchObtenerDatos(input_nombre.value);
 })
 
