@@ -5,17 +5,27 @@ let btn_axios = document.querySelector("#axios-btn")
 
 let formulario = document.querySelector("#formulario")
 
+
+
 function obtenerDatos(valor) {
-    let api = "https://itunes.apple.com/search?term="
-    console.log(api+`${valor}`);
+    //? Con encodeURIComponent hago que si escribo "Instant crush - Daft punk" se ponga algo como "Instant%20Crush%20-%20Daft%20Punk"
     
-    fetch(api+`${valor}`)
-    .then((response) => response.text())
-    .then((resultado)=>console.log(resultado))
+    let api =`https://itunes.apple.com/search?term=${encodeURIComponent(valor)}&media=music&entity=song&limit=1`;
+    
+    fetch(api)
+    .then((respuesta) => respuesta.json())
+    .then((datos)=>{
+
+        console.log(datos.results);
+        
+
+    }
+    )
     
 
 
 }
+
 
 formulario.addEventListener("submit",(e)=>{
     e.preventDefault();
