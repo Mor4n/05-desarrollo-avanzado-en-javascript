@@ -1,47 +1,63 @@
-// Datos iniciales de libros en formato JSON
-let biblioteca = {
-    "libros": [
-        { "titulo": "Cien años de soledad", "autor": "Gabriel García Márquez", "genero": "Realismo mágico", "disponible": true },
-        { "titulo": "1984", "autor": "George Orwell", "genero": "Distopía", "disponible": true }
-    ]
-};
 
-// Función para simular la lectura de datos (asimilar la lectura de un archivo JSON)
-function leerDatos(callback) {
-    setTimeout(() => {
-        // Aquí simulas leer el JSON con un retraso de 1 segundo
-        callback(biblioteca);
-    }, 1000);
-}
+const btnReservar = document.querySelector("button");
 
-// Función para mostrar todos los libros en consola
-function mostrarLibros() {
-    leerDatos((datos) => {
-        console.log("Inventario de libros:");
-        datos.libros.forEach((libro, index) => {
-            console.log(`${index + 1}. ${libro.titulo} - ${libro.autor} (${libro.disponible ? 'Disponible' : 'Prestado'})`);
-        });
+let mesasDisponibles = 5;
+
+function verificarDisponibilidad(mesasSolicitadas) {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            if (mesasSolicitadas <= mesasDisponibles) {
+                resolve();
+            } else {
+                reject("Lamentablemente no tenemos las mesas suficientes :( ");
+            }
+        }, 1000);
     });
 }
 
-// Función para agregar un nuevo libro
-function agregarLibro(titulo, autor, genero, disponible) {
-    const nuevoLibro = { titulo, autor, genero, disponible };
-    // Aquí falta la simulación de escribir el libro en el "archivo" (es decir, agregarlo al objeto)
-    setTimeout(() => {
-        // Pista: deberías agregar el nuevo libro a `biblioteca.libros`
-    }, 1000);
+function enviarConfirmacionReserva(nombreCliente) {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            if (Math.random() > 0.5) {
+                resolve(`Gracias por su compra, hemos enviado el ticket a ${nombreCliente}  :D!!!`);
+            } else {
+                reject("Hubo un error al mandar el correo electrónico u-u");
+            }
+        }, 1000);
+    });
 }
 
-// Función para cambiar la disponibilidad de un libro
-function actualizarDisponibilidad(titulo, nuevoEstado) {
-    // Simula un retraso antes de actualizar la disponibilidad
-    setTimeout(() => {
-        // Pista: busca el libro por título y cambia la propiedad 'disponible' a nuevoEstado
-    }, 1000);
+async function hacerReserva(nombreCliente, mesasSolicitadas) {
+    const resultado = document.getElementById("resultado");
+    
+    try {
+        resultado.innerText = "Verificando disponibilidad...";
+        
+        await verificarDisponibilidad(mesasSolicitadas);
+        
+        mesasDisponibles -= mesasSolicitadas;
+        document.getElementById("estado").innerText =
+        "Mesas disponibles: " + mesasDisponibles;
+        
+        resultado.innerText = "Enviando confirmación . . .";
+        const confirmacion = await enviarConfirmacionReserva(nombreCliente);
+        
+        resultado.innerText = "Reserva exitosa!!! " + confirmacion;
+        
+    } catch (error) {
+        resultado.innerText = error;
+    }
 }
 
-// Ejemplo de cómo ejecutar la aplicación
-mostrarLibros();
-agregarLibro("El principito", "Antoine de Saint-Exupéry", "Fábula", true);
-actualizarDisponibilidad("1984", false);
+function hacerReservaUI() {
+    const nombre = document.getElementById("nombre").value;
+    const mesas = parseInt(document.getElementById("mesas").value);
+    
+    if (!nombre || !mesas || mesas <= 0) {
+        document.getElementById("resultado").innerText = "Datos inválidos";
+        return;
+    }
+    
+    hacerReserva(nombre, mesas);
+}
+btnReservar.addEventListener("click",()=>hacerReservaUI())
