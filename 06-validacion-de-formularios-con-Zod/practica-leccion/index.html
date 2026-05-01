@@ -4,26 +4,30 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
 
+  <h1>Validación con Zod</h1>
     <form id="formulario">
         <div class="formulario_campo">
           <label for="nombre">Nombre:</label>
-        <input type="text" name="nombre" id="nombre">
+        <input type="text" name="nombre" id="nombre" placeholder="Ingrese su nombre">
         </div>
         
         <div class="formulario_campo">
           <label for="email">Email:</label>
-          <input type="text" name="email" id="email">
+          <input type="text" name="email" id="email" placeholder="Ingrese su correo electrónico ">
         </div>
         
         <div class="formulario_campo">
           <label for="password">Contraseña:</label>
-          <input type="password" name="password" id="password">
+          <input type="password" name="password" id="password" placeholder="Ingrese una contraseña con un mínimo 8 caracteres">
         </div>
-        
-        <input type="submit" value="Enviar">
+        <button type="submit"  value="Enviar" id="enviar">Enviar</button>
 
     </form>
 

@@ -32,14 +32,35 @@ formulario.addEventListener("submit", (e) => {
 
     const validacion = schema.safeParse(usuario);
 
+
     if (validacion.success) {
-        console.log(`Se envió el formulario correctamente`);
+        
+        alert(`Se envió el formulario correctamente`);
+        formulario.reset();
+
     } else {
         console.log("Errores");
+        
         validacion.error.issues.forEach((e) => {
+            mostrarHTML(e.message, e.path);
             console.warn(`${e.message}`);
         });
     }
 });
 
 
+const mostrarHTML = (mensaje, referencia) => {
+  const input = document.querySelector(`#${referencia}`).parentElement;
+
+    if (input.querySelector(".error")) return; // Si ya existe dentro de input algo con la clase error, entonces que no se muestre la alerta
+
+    const error = document.createElement("p");
+    error.textContent = mensaje;
+    error.classList.add("error");
+
+    input.appendChild(error);
+
+    setTimeout(() => {
+        error.remove();
+    }, 2000);
+};
