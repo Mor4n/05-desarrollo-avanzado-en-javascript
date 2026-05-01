@@ -1,13 +1,84 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Formulario semántico</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
-    
-    <script src=""></script>
+  <main>
+    <h1>Formulario</h1>
+
+    <form id="formulario">
+      <fieldset>
+        <legend>Datos personales</legend>
+
+        <label for="nombre">Nombre</label>
+        <input type="text" name="nombre" id="nombre" placeholder="Ingrese su nombre" required>
+
+        <label for="correo">Correo electrónico</label>
+        <input type="email" name="correo" id="correo" placeholder="Ingrese su correo electrónico: ejemplo@ejemplo.com" required>
+
+        <label for="telefono">Teléfono</label>
+        <input type="tel" name="telefono" placeholder="Ingrese el telefono en formato: (633) 390 9921" id="telefono" required>
+      </fieldset>
+
+      <fieldset>
+        <legend>Intereses (Opcional)</legend>
+
+        <label for="programacion">
+          <input type="checkbox" name="intereses" id="programacion" value="programacion">
+          Programación
+        </label>
+
+        <label for="robotica">
+          <input type="checkbox" name="intereses" id="robotica" value="robotica">
+          Robótica
+        </label>
+
+        <label for="arte">
+          <input type="checkbox" name="intereses" id="arte" value="arte">
+          Arte
+        </label>
+      </fieldset>
+
+      <fieldset>
+        <legend>Seleccione su horario preferido</legend>
+
+        <label for="matutino">
+          <input type="radio" name="horario" id="matutino" value="matutino" required>
+          Matutino
+        </label>
+
+        <label for="vespertino">
+          <input type="radio" name="horario" id="vespertino" value="vespertino">
+          Vespertino
+        </label>
+
+        <label for="nocturno">
+          <input type="radio" name="horario" id="nocturno" value="nocturno">
+          Nocturno
+        </label>
+      </fieldset>
+
+      <label for="fecha">Fecha del evento:</label>
+      <input type="date" id="fecha" name="fecha" required>
+
+      <label for="hora">Hora preferida:</label>
+      <input type="time" id="hora" name="hora" required>
+
+
+      <label for="archivo">Añadir documento de identificación (opcional)</label>
+      <input type="file" accept=".png" name="archivo" id="archivo">
+
+      <button type="submit">Enviar formulario</button>
+    </form>
+  </main>
+
+  <script src="./script/app.js"></script>
 </body>
 </html>
