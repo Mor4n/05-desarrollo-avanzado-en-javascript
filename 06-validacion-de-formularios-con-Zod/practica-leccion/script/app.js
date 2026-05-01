@@ -1,42 +1,71 @@
-  document.querySelector('#formulario').addEventListener('submit', (event) => {
+  const formulario = document.querySelector('#formulario')
+  formulario.addEventListener('submit', (event) => {
+
       event.preventDefault(); 
 
+
+
       // Variables
-      const nombre = document.querySelector('#nombre').value;
-      const correo = document.querySelector('#correo').value;
-      const telefono = document.querySelector('#telefono').value;
+      const nombre = document.querySelector('#nombre');
+      const correo = document.querySelector('#correo');
+      const telefono = document.querySelector('#telefono');
       const intereses = document.querySelectorAll('input[name="intereses"]:checked');
       const horario = document.querySelector('input[name="horario"]:checked');
-      const fecha = document.querySelector('#fecha').value;
-      const hora = document.querySelector('#hora').value;
+      const fecha = document.querySelector('#fecha');
+      const hora = document.querySelector('#hora');
+
+      let error = false; // bandera para manejar los errores
 
       // Validaciones básicas
-      // if (!nombre || !correo || !telefono || intereses.length === 0 || !horario) {
-      //   alert('Por favor, completa todos los campos obligatorios.');
-      //   return;
-      // }
+      if (!nombre.value || !correo.value || !telefono.value || intereses.length === 0 || !horario) {
+        alert('Por favor, completa todos los campos obligatorios.');
+        error = true;
+      }
 
       // 1.- Validar si el nombre es demasiado largo
-      if(nombre.length>36){
-        alert("El nombre es demasiado largo");
-        return;
+      if(nombre.value.length>36){
+        mostrarAlerta("El nombre es demasiado largo", nombre);
+        error = true;
+
       }
 
       // 2.- Validar si un nombre tiene algo que no sean letras
-      if (nombre.match(/[^a-zA-ZñÑáéíóúÁÉÍÓÚ\s]/)){
-        alert("El nombre solo puede contener letras");
-        return;
+      if (nombre.value.match(/[^a-zA-ZñÑáéíóúÁÉÍÓÚ\s]/)){
+        mostrarAlerta("El nombre solo puede contener letras", nombre);
+        error = true;
+
       }
 
       // 3.- Validar formato de telefono
 
-      if (!telefono.match(/^\(\d{3}\) \d{3} \d{4}$/ )){
-        alert("El telefono no tiene su formato valido")
-        return;
+      if (!telefono.value.match(/^\(\d{3}\) \d{3} \d{4}$/ )){
+        mostrarAlerta("El telefono no tiene su formato valido", telefono);
+
+        error = true;
+
       }
 
   
       // Si todo está bien
-      // alert('Registro exitoso. ¡Gracias por registrarte!');
+
+      if(!error){
+        alert('Registro exitoso. ¡Gracias por registrarte!');
+        formulario.reset();
+
+      }
+
     });
 
+
+    const mostrarAlerta = (mensaje, referencia) =>{
+      const error = document.createElement("P");
+      error.classList.add("error");
+      error.textContent = mensaje;
+      
+      referencia.before(error); // se puede usar after tambien
+
+      setTimeout(() => {
+        error.remove();
+      }, 3000);
+
+    }
