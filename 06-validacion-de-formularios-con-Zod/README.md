@@ -85,6 +85,10 @@ https://mor4n.github.io/05-desarrollo-avanzado-en-javascript/06-validacion-de-fo
 ## Como conclusión personal:
 En esta práctica pude aprender a como validar formularios, tema que es importante tanto para mantener la seguridad tanto del usuario como de la base de datos, así podemos mantener una consistencia de datos e incluso, evitar que usuarios maliciosos traten de entrar a vulnerar nuestro sistema mediante una inyección SQL u otro tipo de ataque.
 Me encantó la parte de expresiones regulares, siento que es algo demasiado útil para verificar los correo electrónicos como el número de teléfono, que es algo que puede escribirse de muchas formas y con esto, lo estamos limitando a una sola para mantener la consistencia de datos :D
-
+Las validaciones que hice fueron:
+- Longitud de nombre
+- Validación de letras con regex
+- Formato de teléfono con regex
+- Solo formato .png en identificación
 
 
