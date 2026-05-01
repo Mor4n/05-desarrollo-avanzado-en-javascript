@@ -10,22 +10,22 @@
   <main>
     <h1>Formulario</h1>
 
-    <form>
+    <form id="formulario">
       <fieldset>
         <legend>Datos personales</legend>
 
         <label for="nombre">Nombre</label>
-        <input type="text" name="nombre" id="nombre">
+        <input type="text" name="nombre" id="nombre" placeholder="Ingrese su nombre" cambiarARequired>
 
         <label for="correo">Correo electrónico</label>
-        <input type="email" name="correo" id="correo" >
+        <input type="email" name="correo" id="correo" placeholder="Ingrese su correo electrónico: ejemplo@ejemplo.com" cambiarARequired>
 
         <label for="telefono">Teléfono</label>
-        <input type="tel" name="telefono" id="telefono" >
+        <input type="tel" name="telefono" placeholder="Ingrese el telefono en formato: (633) 390 9921" id="telefono" cambiarARequired>
       </fieldset>
 
       <fieldset>
-        <legend>Intereses</legend>
+        <legend>Intereses (Opcional)</legend>
 
         <label for="programacion">
           <input type="checkbox" name="intereses" id="programacion" value="programacion">
@@ -47,7 +47,7 @@
         <legend>Seleccione su horario preferido</legend>
 
         <label for="matutino">
-          <input type="radio" name="horario" id="matutino" value="matutino">
+          <input type="radio" name="horario" id="matutino" value="matutino" cambiarARequired>
           Matutino
         </label>
 
@@ -62,11 +62,15 @@
         </label>
       </fieldset>
 
-      <label for="fecha">Seleccione una fecha para el evento</label>
-      <input type="date" name="fecha" id="fecha">
+      <label for="fecha">Fecha del evento:</label>
+      <input type="date" id="fecha" name="fecha" cambiarARequired>
 
-      <label for="archivo">Añadir archivo (opcional)</label>
-      <input type="file" name="archivo" id="archivo">
+      <label for="hora">Hora preferida:</label>
+      <input type="time" id="hora" name="hora" cambiarARequired>
+
+
+      <label for="archivo">Añadir documento de identificación (opcional)</label>
+      <input type="file" accept=".png" name="archivo" id="archivo">
 
       <button type="submit">Enviar formulario</button>
     </form>
