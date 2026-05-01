@@ -57,15 +57,17 @@
     });
 
 
-    const mostrarAlerta = (mensaje, referencia) =>{
-      const error = document.createElement("P");
-      error.classList.add("error");
-      error.textContent = mensaje;
-      
-      referencia.before(error); // se puede usar after tambien
+    const mostrarAlerta = (mensaje, referencia) => {
+      // si ya existe, que no la vuelva a poner
+  if (referencia.previousElementSibling?.classList.contains("error")) return;
 
-      setTimeout(() => {
-        error.remove();
-      }, 3000);
+  const error = document.createElement("p");
+  error.classList.add("error");
+  error.textContent = mensaje;
 
-    }
+  referencia.before(error);
+
+  setTimeout(() => {
+    error.remove();
+  }, 5000);
+};
