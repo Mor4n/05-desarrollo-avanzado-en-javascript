@@ -30,3 +30,6 @@ const planetas = [
     descubiertoEn: "2000"
   }
 ];
+
+module.exports = planetas; // exporto los planetas con "exports"
+// exports porque estamos usando type=module o "CommonJS" en el package.json, si no, usaríamos "export default planetas"
