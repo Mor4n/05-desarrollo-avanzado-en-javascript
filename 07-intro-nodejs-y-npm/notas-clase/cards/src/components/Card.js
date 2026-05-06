@@ -1,0 +1,16 @@
+
+// Función card que recibe 3 parametros
+const Card = (username, content, posted_at) =>{
+
+    return /* html */`
+        <div class="card">
+            <p>${username} <span>${posted_at}</span></p><br>
+            <p>${content}</p>
+
+        </div>
+    `
+
+}
+
+// Exportar componentes para usarlos en otros lados
+export default Card; // export default es solo si vamos a exportar UNA función
