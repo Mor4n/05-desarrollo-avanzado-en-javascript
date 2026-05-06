@@ -10,7 +10,7 @@ const planetas = [
     nombre: "Próxima Centauri b",
     descripcion: "Un exoplaneta rocoso en la zona habitable de su estrella.",
     descubiertoEn: "2016",
-    img:"https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Artist%27s_impression_of_the_planet_orbiting_Proxima_Centauri.jpg/1920px-Artist%27s_impression_of_the_planet_orbiting_Proxima_Centauri.jpg",
+    img:"https://es.wikipedia.org/wiki/Pr%C3%B3xima_Centauri_b#/media/Archivo:Artist's_impression_of_the_planet_orbiting_Proxima_Centauri.jpg",
     coordenadas:["45707.3:226384.5:5796384.5","36384.5:216950.5:5796384.5","36384.5:235677.6:5796384.5"]
   },
   {
