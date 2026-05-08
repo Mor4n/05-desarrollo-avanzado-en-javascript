@@ -1,0 +1,56 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body{
+
+    background-color: #000000;
+
+}
+
+nav{
+    display: flex;
+    align-items: center;
+    height: 75px;
+
+}
+
+/* Iconos de logo, home y avatar */
+#logo, #home, #avatar{
+    width: 40px;
+    cursor: pointer;
+}
+
+#logo{
+    margin-left: 20px;
+}
+
+/* contenedor de home y busqueda */
+#home-search{
+    display: flex;
+    margin: 0 auto;
+    gap: 15px;
+}
+
+
+#search-container{
+
+}
+
+#search{
+    height: 40px;
+    width: 250px;
+    border-radius: 50px;
+    background-color: #2a2a2a;
+    border: none;
+    padding: 10px;
+    color: #b3b3af;
+}
+
+#avatar{
+    border-radius: 30px;
+    margin-right: 20px;
+}
