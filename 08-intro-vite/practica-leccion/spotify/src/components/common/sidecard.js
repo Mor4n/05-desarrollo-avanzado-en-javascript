@@ -2,6 +2,8 @@
 const Sidecard = () =>{
 
     return /* html */`
+    
+
     `
 }
 
