@@ -1,52 +1,79 @@
 
-# Lección 08 - Intro a Vite: Taller/Workshop: ¡Crea tu propio "Adivina el número" con Vite!
+# Leccion 08 - Intro a Vite
+
+## Proyecto
+
+Mini clon de Spotify desarrollado con Vite y JavaScript por módulos.
 
 
+## Aprendizajes
 
-## Archivos del repositorio
+- Inicializar y ejecutar un proyecto con Vite
+- Organizar una UI en componentes reutilizables
+- Uso de objetos para mostrar datos dinamicamente en un módulo mediante map
+- Usar barrels para centralizar imports de assets y datos
+- Separar estructura (`index.html`), logica (`src/`) y estilos (`src/style.css`)
 
-- **./practica-leccion/index.html**: Archivo HTML del proyecto, conectando el script.js 
+## Estructura principal
 
-- **./practica-leccion/style.css**: Archivo CSS del proyecto, conteniendo los estilos del proyecto
+- `./practica-leccion/spotify/index.html`: Archivo inicial de HTML.
+- `./practica-leccion/spotify/src/main.js`: Une Navbar, Sidebar, Content, Download y MusicPlayer
+- `./practica-leccion/spotify/src/style.css`: Estilos para todo el proyecto
+- `./practica-leccion/spotify/src/components/`: Componentes principales y common
+- `./practica-leccion/spotify/src/barrels/assets.js`: Barrel de imagenes e iconos
+- `./practica-leccion/spotify/src/barrels/data.js`: Datos como objetos que uso en el proyecto para mostrarlos dinamicamente
 
-- **./practica-leccion/script/app.js**: Archivo de Javascript con la práctica realizada para este proyecto, tanto en consola como con interfaz con el HTML.
+- `./capturas/Captura1.png`: Resultado final
 
+## Tecnologias
 
-- **./capturas/Captura1.png**: Captura de pantalla de HTML junto con el resultado del ejercicio en consola
-- **./capturas/Captura2.png**: Captura de pantalla del HTML con el resultado de la palabra más larga
+- Vite
+- JavaScript (ES Modules)
+- HTML5
+- CSS3
 
+## Como ejecutar el proyecto
 
-## Aprendizajes:
+1. Entra a la carpeta del proyecto:
 
--
+```bash
+cd ./practica-leccion/spotify
+```
+
+2. Instala dependencias:
+
+```bash
+npm install
+```
+
+3. Inicia el servidor de desarrollo:
+
+```bash
+npm run dev
+```
+
+4. Abre en el navegador la URL que te muestre Vite (en mi caso fue `http://localhost:5173`).
+
+## Scripts
+
+- `npm run dev`: Levanta entorno de desarrollo.
 
 
 ## Evidencia visual
 
-A continuación se muestra una captura de pantalla del código funcionando en la consola del navegador:
+![Captura del proyecto](./capturas/Captura1.png)
 
-![Captura inicial del programa](./capturas/Captura1.png)
+## Notas
 
+- El proyecto usa assets locales dentro de `src/assets` (iconos SVG, portadas JPG/WEBP y recursos de UI)
+- Los nombres y exportaciones de assets traté de administrarlos desde un barrel para simplificar imports
 
+## Conclusiones:
 
-## Ejemplo de uso
-
-Abra el archivo 
-```./practica-leccion/index.html```
-en su navegador y revise el sitio web para probar la funcionalidad del mismo
-
-También puede mirar el código de JavaScript abriendo el archivo
-```./practica-leccion/script/app.js```
-dentro de su editor de código preferido o dentro de Github.
-
-## Despliegue
-
-Se desplegó en Github Pages a partir de este repositorio, puedes ver la página a través del siguiente link:
+En este proyecto pude aprender DEMASIADO, siento que es como una introducción a lo que veremos en React, pude aprender a como hacer por módulos un proyecto (nunca me imaginé la verdad que se pudiera hacer de la forma en la que nos enseñó Ó_Ó) y esto se me hizo demasiado importante y poderoso, en este caso, quise volver a hacer la intefaz de Spotify que había hecho para el Reto 3 de CSS del módulo 2, y realmente fue súper fácil y sencillo hacerlo, hice menos líneas de código por la reutilización de módulos y fue ultra genial!!
+Donde llegué a tener trabas es cuando quise recorrer los objetos de información que creé (para no estar llamando muchas veces a una función solo cambiando la información).
+Mi problema fue que lo quise hacer con forEach y me daba undefined, luego revisando las notas de la clase me di cuenta que se tenía que realizar con .map y con eso se pudo hacer de forma dinámica por así decirlo el desplegado de datos :''D!
+En serio, con todo esto siento que conecté demasiados temas y me llevo un ultra gran sabor de boca con lo que pude aprender! Muchas gracias
 
 
-
-## Como conclusión personal:
-
-
-## Fuentes:
 

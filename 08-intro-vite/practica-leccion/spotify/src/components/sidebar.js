@@ -1,4 +1,5 @@
 import { aimer, cancionesImpactan, forge, kindie, megusta, meRecuerdaA, queMeRecuerda, sime, tresTresTres, workout } from "../barrels/assets";
+import { contentSidebar } from "../barrels/data";
 import FilterButton from "./common/filter-button";
 import Sidecard from "./common/sidecard";
 
@@ -18,19 +19,11 @@ const Sidebar = () =>{
             ${FilterButton("Podcasts")}
         </div>
 
-        </*Esto lo podría convertir en objeto en un futuro */>
+          ${contentSidebar.map( elemento =>{
+                const {imgUrl, nombre, anclado,tipo,autor} = elemento;
+                return Sidecard(imgUrl,nombre,anclado,tipo,autor)
 
-        ${Sidecard(megusta, "Tus me gusta",false,"Playlist","709 canciones")}
-        ${Sidecard(kindie, "Tus me gusta",true,"Playlist","709 canciones")}
-        ${Sidecard(workout, "Tus me gusta",true,"Playlist","709 canciones")}
-        ${Sidecard(cancionesImpactan, "Tus me gusta",true,"Playlist","709 canciones")}
-        ${Sidecard(forge, "Tus me gusta",false,"Playlist","709 canciones")}
-        ${Sidecard(meRecuerdaA, "Tus me gusta",false,"Playlist","709 canciones")}
-        ${Sidecard(queMeRecuerda, "Tus me gusta",false,"Playlist","709 canciones")}
-        ${Sidecard(tresTresTres, "Tus me gusta",false,"Playlist","709 canciones")}
-        ${Sidecard(sime, "Tus me gusta",false,"Playlist","709 canciones")}
-        ${Sidecard(aimer, "Tus me gusta",false,"Playlist","709 canciones")}
-
+            }).join("")}
 
 
 

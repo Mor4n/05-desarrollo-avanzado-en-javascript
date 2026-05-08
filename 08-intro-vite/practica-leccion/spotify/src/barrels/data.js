@@ -1,4 +1,5 @@
 import {
+    megusta,
     cancionesImpactan,
     forge,
     kindie,
@@ -18,6 +19,80 @@ import {
     aimer,
     radwimps,
 } from "../barrels/assets";
+
+
+const contentSidebar = [
+    {
+        imgUrl: megusta,
+        nombre: "Tus me gusta",
+        anclado: false,
+        tipo: "Playlist",
+        autor: "709 canciones",
+    },
+    {
+        imgUrl: kindie,
+        nombre: "K-indie",
+        anclado: true,
+        tipo: "Playlist",
+        autor: "Morán",
+    },
+    {
+        imgUrl: workout,
+        nombre: "Workout",
+        anclado: true,
+        tipo: "Playlist",
+        autor: "Morán",
+    },
+    {
+        imgUrl: cancionesImpactan,
+        nombre: "Canciones que me impactan",
+        anclado: true,
+        tipo: "Playlist",
+        autor: "Morán",
+    },
+    {
+        imgUrl: forge,
+        nombre: "Forge Mx9😎",
+        anclado: false,
+        tipo: "Playlist",
+        autor: "Forge",
+    },
+    {
+        imgUrl: meRecuerdaA,
+        nombre: "Me recuerda a",
+        anclado: false,
+        tipo: "Playlist",
+        autor: "Morán",
+    },
+    {
+        imgUrl: queMeRecuerda,
+        nombre: "Que me recuerda a alguien",
+        anclado: false,
+        tipo: "Playlist",
+        autor: "Morán",
+    },
+    {
+        imgUrl: tresTresTres,
+        nombre: "3:33 a.m",
+        anclado: false,
+        tipo: "Playlist",
+        autor: "Morán",
+    },
+    {
+        imgUrl: sime,
+        nombre: "Sime identifico",
+        anclado: false,
+        tipo: "Playlist",
+        autor: "Morán",
+    },
+    {
+        imgUrl: aimer,
+        nombre: "Estación de Aimer",
+        anclado: false,
+        tipo: "Playlist",
+        autor: "Spotify",
+    },
+]
 
 const contentMiniPlaylist = [
     {
@@ -101,4 +176,4 @@ const contentMusic = [
     },
 ];
 
-export { contentMadeFor, contentMusic, contentMiniPlaylist };
+export { contentSidebar, contentMadeFor, contentMusic, contentMiniPlaylist };
