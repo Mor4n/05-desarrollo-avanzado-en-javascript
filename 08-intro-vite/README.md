@@ -1,6 +1,11 @@
 
 # Leccion 08 - Intro a Vite
 
+# Nota:
+La url la cambié debido a que al parecer como que estaban entrando muchas personas al sitio de netlify por la palabra de spotify creo jsjs, la nueva URL es:
+[proyectofinaldevf-modular.netlify.app](https://proyectofinaldevf-modular.netlify.app/)
+(Perdón por las molestias)
+
 ## Proyecto
 
 Mini clon de Spotify desarrollado con Vite y JavaScript por módulos.
@@ -71,7 +76,7 @@ npm run dev
 ## Despliegue
 
 Se desplegó en Github Pages a partir de este repositorio, puedes ver la página a través del siguiente link:
-https://spotify-modular.netlify.app/
+https://proyectofinaldevf-modular.netlify.app/
 
 ## Como conclusión personal:
 
