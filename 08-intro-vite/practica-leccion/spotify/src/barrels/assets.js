@@ -3,10 +3,15 @@ import workout from "../assets/workout.png"
 import megusta from "../assets/megusta.png"
 import logo from "../assets/logo.png"
 import kindie from "../assets/k-indie.png"
-import home from "../assets/home.png"
+import home from "../assets/home.svg"
 import descarga from "../assets/descarga.png"
 import descargacompleto from "../assets/descarga-completo.png"
 import avatar from "../assets/avatar.jpg"
+import forward from "../assets/forward.svg"
+import loop from "../assets/loop.svg"
+import playSvg from "../assets/play.svg"
+import previous from "../assets/previous.svg"
+import randomSvg from "../assets/random.svg"
 import anterior from "../assets/barra-reproduccion/anterior.png"
 import barra from "../assets/barra-reproduccion/barra.png"
 import bucle from "../assets/barra-reproduccion/bucle.png"
@@ -44,6 +49,11 @@ export {
 	home,
 	descarga,
 	descargacompleto,
+	forward,
+	loop,
+	playSvg,
+	previous,
+	randomSvg,
 	anterior,
 	barra,
 	bucle,

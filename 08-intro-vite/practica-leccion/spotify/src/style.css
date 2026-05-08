@@ -27,7 +27,7 @@ nav{
 }
 
 /* Iconos de logo, home y avatar */
-#logo, #home, #avatar{
+#logo,  #avatar{
     width: 40px;
     cursor: pointer;
 }
@@ -36,6 +36,12 @@ nav{
     margin-left: 20px;
 }
 
+img#home{
+    background-color: #1f1f1f;
+    border-radius: 30px;
+    padding: 10px;
+    cursor: pointer;
+}
 /* contenedor de home y busqueda */
 #home-search{
     display: flex;
