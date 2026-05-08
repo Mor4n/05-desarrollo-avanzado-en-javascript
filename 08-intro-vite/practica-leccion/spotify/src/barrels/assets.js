@@ -7,17 +7,14 @@ import home from "../assets/home.svg"
 import descarga from "../assets/descarga.png"
 import descargacompleto from "../assets/descarga-completo.png"
 import avatar from "../assets/avatar.jpg"
-import forward from "../assets/forward.svg"
-import loop from "../assets/loop.svg"
-import playSvg from "../assets/play.svg"
-import previous from "../assets/previous.svg"
-import randomSvg from "../assets/random.svg"
-import anterior from "../assets/barra-reproduccion/anterior.png"
+
+import forward from "../assets/barra-reproduccion/forward.svg"
 import barra from "../assets/barra-reproduccion/barra.png"
-import bucle from "../assets/barra-reproduccion/bucle.png"
-import play from "../assets/barra-reproduccion/play.png"
-import random from "../assets/barra-reproduccion/random.png"
-import siguiente from "../assets/barra-reproduccion/siguiente.png"
+import loop from "../assets/barra-reproduccion/loop.svg"
+import play from "../assets/barra-reproduccion/play.svg"
+import random from "../assets/barra-reproduccion/random.svg"
+import previous from "../assets/barra-reproduccion/previous.svg"
+
 import volumen from "../assets/barra-reproduccion/volumen.png"
 import aimer from "../assets/estaciones/aimer.jpg"
 import joji from "../assets/estaciones/joji.jpg"
@@ -51,16 +48,13 @@ export {
 	descargacompleto,
 	forward,
 	loop,
-	playSvg,
 	previous,
-	randomSvg,
-	anterior,
 	barra,
-	bucle,
 	play,
 	random,
-	siguiente,
 	volumen,
+
+
 	aimer,
 	joji,
 	nujabes,
