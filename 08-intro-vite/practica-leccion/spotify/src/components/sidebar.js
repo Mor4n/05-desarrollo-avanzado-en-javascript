@@ -1,3 +1,4 @@
+import { megusta } from "../barrels/assets";
 import Sidebutton from "./common/sidebutton";
 import Sidecard from "./common/sidecard";
 
@@ -16,6 +17,8 @@ const Sidebar = () =>{
             ${Sidebutton("Álbumes")}
             ${Sidebutton("Podcasts")}
         </div>
+
+        ${Sidecard(megusta, "Tus me gusta",false,"Playlist","709 canciones")}
 
 
 

@@ -86,3 +86,43 @@ nav{
     background-color: #5c5c66;
     transition: .25s;
 }
+
+/* Tu biblioteca tarjetas */
+
+
+.sidecard{
+    display: flex;
+    width: 400px;
+    height: 75px;
+}
+.sidecard:hover{
+    background-color: #1f1f1f;
+
+}
+
+.sidecard-img{
+    width: 50px;
+    height: 50px;
+    align-items: center;
+    object-fit: cover;
+    border-radius: 7px;
+    margin-top: 10px;
+    margin-left: 3px;
+}
+.sidecard-datos{
+    width: 350px;
+    margin-left:15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.sidecard-titulo{
+    color: #fefefe;
+    font-size: 15px;
+    font-weight: 500;
+}
+.sidecard-autor{
+    color: #bebebe;
+    font-size: 13px;
+}
