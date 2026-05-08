@@ -1,5 +1,5 @@
 import { aimer, cancionesImpactan, forge, kindie, megusta, meRecuerdaA, queMeRecuerda, sime, tresTresTres, workout } from "../barrels/assets";
-import Sidebutton from "./common/sidebutton";
+import FilterButton from "./common/filter-button";
 import Sidecard from "./common/sidecard";
 
 
@@ -12,10 +12,10 @@ const Sidebar = () =>{
         <h2>Tu biblioteca</h1>
 
         <div class="botones-filtro-container">
-            ${Sidebutton("Playlists")}
-            ${Sidebutton("Artistas")}
-            ${Sidebutton("Álbumes")}
-            ${Sidebutton("Podcasts")}
+            ${FilterButton("Playlists")}
+            ${FilterButton("Artistas")}
+            ${FilterButton("Álbumes")}
+            ${FilterButton("Podcasts")}
         </div>
 
         </*Esto lo podría convertir en objeto en un futuro */>

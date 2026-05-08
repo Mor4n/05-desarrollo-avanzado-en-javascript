@@ -1,5 +1,5 @@
 
-const Sidebutton = (title) =>{
+const Filterbutton = (title) =>{
 
     return /* html */`
 
@@ -8,4 +8,4 @@ const Sidebutton = (title) =>{
     `
 }
 
-export default Sidebutton;
+export default Filterbutton;
