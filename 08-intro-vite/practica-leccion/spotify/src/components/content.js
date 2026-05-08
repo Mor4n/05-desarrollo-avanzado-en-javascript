@@ -1,6 +1,11 @@
-import { cancionesImpactan, forge, kindie, meRecuerdaA, queMeRecuerda, sime, tresTresTres, workout } from "../barrels/assets";
+import { cancionesImpactan, forge, kindie, meRecuerdaA, queMeRecuerda, sime, tresTresTres, workout,
+descubrimiento, mixDiario1, mixDiario2, mixDiario3, mixDiario4,} from "../barrels/assets";
+import { contentMadeFor, contentMiniPlaylist, contentMusic } from "../barrels/data";
+import ContentSection from "./common/content-section";
 import Filterbutton from "./common/filter-button";
 import MiniPlaylist from "./common/miniplaylist";
+
+
 
 const Content = () =>{
 
@@ -12,18 +17,19 @@ const Content = () =>{
                 ${Filterbutton("Música")}
                 ${Filterbutton("Podcasts")}
             </div>
-
+            
             <div id="miniplaylist-container">
-                ${MiniPlaylist(workout,"Workout")}
-                ${MiniPlaylist(cancionesImpactan,"Canciones que me impactan")}
-                ${MiniPlaylist(queMeRecuerda,'//"Que me recuerda a alguien"//')}
-                ${MiniPlaylist(tresTresTres,"3:33 a.m")}
-                ${MiniPlaylist(meRecuerdaA,"Me recuerda a")}
-                ${MiniPlaylist(forge,"Forge Mx9")}
-                ${MiniPlaylist(sime,"Sime identifico")}
-                ${MiniPlaylist(kindie,"K-indie")}
+                
+                ${contentMiniPlaylist.map( elemento =>{
+                    const { imgUrl,titulo } = elemento;
+                        return MiniPlaylist(imgUrl,titulo)
+                })}
             
             </div>
+
+            ${ContentSection("Hecho para","Morán",contentMadeFor)}
+            
+            ${ContentSection("Música sin interrupciones basada en tus canciones y tus artistas favoritos","Estaciones recomendadas", contentMusic)}
 
         </section>
 
