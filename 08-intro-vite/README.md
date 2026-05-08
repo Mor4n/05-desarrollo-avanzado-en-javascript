@@ -71,7 +71,7 @@ npm run dev
 ## Despliegue
 
 Se desplegó en Github Pages a partir de este repositorio, puedes ver la página a través del siguiente link:
-https://mor4n.github.io/05-desarrollo-avanzado-en-javascript/06-validacion-de-formularios-con-Zod/practica-leccion/index.html
+https://spotify-modular.netlify.app/
 
 ## Como conclusión personal:
 
