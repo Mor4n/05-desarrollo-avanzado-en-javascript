@@ -62,11 +62,15 @@ nav{
 /* Parte de tu biblioteca */
 
 #biblioteca{
-    border: 1px solid red;
+    /* border: 1px solid red; */
     width: 22%;
     padding-top: 20px;
     padding-left:25px;
     border-radius: 15px;
+    background-color: #121212;
+}
+#biblioteca h2{
+    font-size: 15px;
 }
 
 .botones-filtro-container{
@@ -94,6 +98,7 @@ nav{
     display: flex;
     width: 400px;
     height: 75px;
+    cursor: pointer;
 }
 .sidecard:hover{
     background-color: #1f1f1f;

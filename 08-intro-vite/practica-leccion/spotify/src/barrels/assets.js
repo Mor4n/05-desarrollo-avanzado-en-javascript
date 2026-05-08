@@ -34,6 +34,7 @@ import queMeRecuerda from "../assets/tarjetita-main/que-me-recuerda.webp"
 import sime from "../assets/tarjetita-main/sime.webp"
 import workoutTarjetita from "../assets/tarjetita-main/workout.webp"
 
+
 export {
     avatar,
 	workout,
